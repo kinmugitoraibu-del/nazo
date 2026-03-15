@@ -1,21 +1,5 @@
-
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>宝箱</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<h2>宝箱を見つけた</h2>
-
-<p>宝箱にはこう書かれている</p>
-<p>「天の声が鍵」</p>
-<p>スマホを傾けてみよう</p>
-
 <script>
+
 let seq=["up","down","up","down","up"];
 let step=0;
 
@@ -25,11 +9,13 @@ function handle(e){
 
 let tilt=e.beta;
 
-if(tilt<-30 && seq[step]=="up"){
+document.body.innerHTML="<h1>"+tilt+"</h1>";
+
+if(tilt<-15 && seq[step]=="up"){
 step++;
 }
 
-if(tilt>30 && seq[step]=="down"){
+if(tilt>15 && seq[step]=="down"){
 step++;
 }
 
@@ -38,7 +24,5 @@ location.href="final.html";
 }
 
 }
-</script>
 
-</body>
-</html>
+</script>

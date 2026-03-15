@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Treasure Puzzle</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>古代遺跡の宝</h1>
+
+<div id="game">
+
+<h2 id="stage">第1の謎</h2>
+
+<img id="questionImage" src="images/q1.png">
+
+<input id="answer" placeholder="答え">
+
+<button onclick="checkAnswer()">送信</button>
+
+<p id="message"></p>
+
+</div>
+
+<div id="tiltArea" style="display:none">
+
+<h2>宝箱を見つけた</h2>
+<p>宝箱にはこう書かれている</p>
+
+<p class="hint">「天の声が鍵」</p>
+
+<p>スマホを動かしてみよう…</p>
+
+<img id="crack" src="">
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

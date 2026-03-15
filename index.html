@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>冒険の始まり</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>古代遺跡の宝</h1>
+
+<p>
+君は宝を求めて古代遺跡に足を踏み入れた。<br>
+謎を解くたび、天から声が聞こえるという。
+</p>
+
+<button onclick="startGame()">冒険を始める</button>
+
+<script>
+function startGame(){
+
+if (typeof DeviceOrientationEvent.requestPermission === "function") {
+DeviceOrientationEvent.requestPermission().then(response => {
+if(response === "granted"){
+location.href="q1.html";
+}
+});
+}else{
+location.href="q1.html";
+}
+
+}
+</script>
+
+</body>
+</html>

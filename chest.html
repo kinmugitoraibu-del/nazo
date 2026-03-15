@@ -1,7 +1,6 @@
-<script>
-
 let seq=["up","down","up","down","up"];
 let step=0;
+let last="neutral";
 
 window.addEventListener("deviceorientation",handle);
 
@@ -9,14 +8,24 @@ function handle(e){
 
 let tilt=e.beta;
 
-document.body.innerHTML="<h1>"+tilt+"</h1>";
+if(tilt<-15 && last!="up"){
+last="up";
 
-if(tilt<-15 && seq[step]=="up"){
+if(seq[step]=="up"){
 step++;
 }
+}
 
-if(tilt>15 && seq[step]=="down"){
+if(tilt>15 && last!="down"){
+last="down";
+
+if(seq[step]=="down"){
 step++;
+}
+}
+
+if(Math.abs(tilt)<10){
+last="neutral";
 }
 
 if(step===5){
@@ -24,5 +33,3 @@ location.href="final.html";
 }
 
 }
-
-</script>

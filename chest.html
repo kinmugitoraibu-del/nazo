@@ -1,35 +1,69 @@
-let seq=["up","down","up","down","up"];
-let step=0;
-let last="neutral";
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>宝箱</title>
+<link rel="stylesheet" href="style.css">
+</head>
 
-window.addEventListener("deviceorientation",handle);
+<body>
+
+<h2>宝箱を見つけた</h2>
+
+<p>宝箱にはこう書かれている</p>
+<p>「天の声が鍵」</p>
+<p>スマホを傾けてみよう</p>
+
+<p id="debug"></p>
+
+<script>
+
+let seq = ["up","down","up","down","up"];
+let step = 0;
+let last = "neutral";
+
+window.addEventListener("deviceorientation", handle);
 
 function handle(e){
 
-let tilt=e.beta;
+let tilt = e.beta;
 
-if(tilt<-15 && last!="up"){
-last="up";
+// デバッグ表示
+document.getElementById("debug").innerHTML =
+"tilt: " + Math.round(tilt) + "<br>step: " + step + "<br>last: " + last;
 
-if(seq[step]=="up"){
-step++;
-}
-}
-
-if(tilt>15 && last!="down"){
-last="down";
-
-if(seq[step]=="down"){
-step++;
-}
+// 上方向
+if(tilt < -15 && last !== "up"){
+    last = "up";
+    if(seq[step] === "up"){
+        step++;
+    }
 }
 
-if(Math.abs(tilt)<10){
-last="neutral";
+// 下方向
+if(tilt > 15 && last !== "down"){
+    last = "down";
+    if(seq[step] === "down"){
+        step++;
+    }
 }
 
-if(step===5){
-location.href="final.html";
+// 中央に戻ったらリセット
+if(Math.abs(tilt) < 10){
+    last = "neutral";
+}
+
+// 成功
+if(step === seq.length){
+    location.href = "final.html";
 }
 
 }
+
+</script>
+
+</body>
+</html>
+```

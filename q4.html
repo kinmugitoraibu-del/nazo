@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第4の謎</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>第4の謎</h2>
+<p>日本の春の花。</p>
+
+<input id="answer">
+<button onclick="check()">送信</button>
+<p id="msg"></p>
+
+<p class="voice">天の声：↓</p>
+
+<script>
+function check(){
+let a=document.getElementById("answer").value;
+if(a==="さくら"){
+location.href="q5.html";
+}else{
+document.getElementById("msg").innerText="違うようだ…";
+}
+}
+</script>
+
+</body>
+</html>

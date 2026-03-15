@@ -1,31 +1,25 @@
 
 body{
-font-family:sans-serif;
+font-family: sans-serif;
 text-align:center;
-padding:20px;
+padding:40px;
 background:#111;
 color:white;
 }
 
-img{
-width:90%;
-max-width:400px;
-margin:20px auto;
-}
-
 input{
+font-size:20px;
 padding:10px;
-font-size:18px;
-width:70%;
+margin:10px;
 }
 
 button{
+font-size:20px;
 padding:10px 20px;
-font-size:18px;
-margin-top:10px;
 }
 
-.hint{
-font-size:22px;
-letter-spacing:10px;
+.voice{
+margin-top:40px;
+font-size:24px;
+color:yellow;
 }

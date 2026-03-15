@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>宝箱</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>宝箱を見つけた</h2>
+
+<p>宝箱にはこう書かれている</p>
+<p>「天の声が鍵」</p>
+<p>スマホを傾けてみよう</p>
+
+<script>
+let seq=["up","down","up","down","up"];
+let step=0;
+
+window.addEventListener("deviceorientation",handle);
+
+function handle(e){
+
+let tilt=e.beta;
+
+if(tilt<-30 && seq[step]=="up"){
+step++;
+}
+
+if(tilt>30 && seq[step]=="down"){
+step++;
+}
+
+if(step===5){
+location.href="final.html";
+}
+
+}
+</script>
+
+</body>
+</html>
